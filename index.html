@@ -4,24 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Website Saya</title>
+    <link rel="icon" type="image/png" href="logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen scroll-smooth">
 
-  <!-- Navbar -->
-  <nav class="bg-white/80 backdrop-blur-md shadow-md fixed w-full top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Navbar -->
+<nav class="bg-white/80 backdrop-blur-md shadow-md fixed w-full top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo + Nama -->
+    <div class="flex items-center space-x-3">
+      <img src="logo.png" alt="Logo DGx" class="w-12 h-12 rounded-full">
       <h1 class="text-2xl font-bold text-purple-600">Doly Gurning</h1>
-      <ul class="flex space-x-6 text-gray-700 font-medium">
-        <li><a href="#home" class="hover:text-purple-500 transition">Home</a></li>
-        <li><a href="#about" class="hover:text-purple-500 transition">Tentang</a></li>
-        <li><a href="#contact" class="hover:text-purple-500 transition">Kontak</a></li>
-      </ul>
     </div>
-  </nav>
+
+    <!-- Menu (Desktop) -->
+    <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+      <li><a href="#home" class="hover:text-purple-500 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-purple-500 transition">Tentang</a></li>
+      <li><a href="#experience" class="hover:text-purple-500 transition">Pengalaman</a></li>
+      <li><a href="#contact" class="hover:text-purple-500 transition">Kontak</a></li>
+    </ul>
+
+    <!-- Hamburger Button (Mobile) -->
+    <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menu (Mobile Dropdown) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white/95 shadow-lg">
+    <ul class="flex flex-col space-y-2 px-4 py-3 text-gray-700 font-medium">
+      <li><a href="#home" class="block hover:text-purple-500 transition">Home</a></li>
+      <li><a href="#about" class="block hover:text-purple-500 transition">Tentang</a></li>
+      <li><a href="#experience" class="block hover:text-purple-500 transition">Pengalaman</a></li>
+      <li><a href="#contact" class="block hover:text-purple-500 transition">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+ 
 
   <!-- Hero Section -->
   <section id="home" class="pt-32 text-center">
@@ -56,93 +78,193 @@
   <section id="experience" class="max-w-6xl mx-auto mt-20 p-6 bg-white shadow-lg rounded-2xl">
     <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Pengalaman</h3>
     <div class="space-y-12">
-      
-        <!-- Pengalaman 1: Asisten Dosen -->
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <!-- Teks -->
-      <div>
-        <h4 class="text-xl font-semibold text-purple-600 mb-4">Asisten Dosen – Universitas Methodist Indonesia</h4>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>
-            Bertanggung jawab dalam pengajaran mata kuliah praktikum yang mencakup 
-            <span class="font-medium text-purple-600">Algoritma dan Pemrograman, Struktur Data, Sistem Basis Data, Desain Web,</span> 
-            serta <span class="font-medium text-purple-600">Pemrograman Web</span>.
-          </li>
-          <li>
-            Membimbing mahasiswa dalam praktikum, membantu memahami konsep dasar serta implementasi 
-            <span class="font-medium text-purple-600">HTML, CSS, dan PHP</span>.
-          </li>
-          <li>
-            Mengajar Framework <span class="font-medium text-purple-600">Laravel</span> kepada mahasiswa.
-          </li>
-          <li>
-            Memberikan bantuan dalam penggunaan alat Web Development seperti 
-            <span class="font-medium">Kode Editor</span> dan versi kontrol (<span class="font-medium">Git</span>), 
-            serta membantu mahasiswa menyelesaikan masalah teknis.
-          </li>
-        </ul>
-      </div>
-      <!-- Sertifikat -->
-      <div class="flex justify-center">
-        <img src="sk_asdos.jpg" alt="Sertifikat Asisten Dosen" 
-             class="w-64 rounded-xl border-4 border-purple-300 shadow-lg hover:scale-105 transition duration-300">
-      </div>
-    </div>
 
-          <!-- Pengalaman 2: Backend Developer & Project Leader -->
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <!-- Teks -->
-      <div>
-        <h4 class="text-xl font-semibold text-purple-600 mb-4">Backend Developer & Project Leader</h4>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Membuat aplikasi berbasis website berjudul <span class="font-medium text-purple-600">"Sistem Tiketing Laporan IT"</span>.</li>
-          <li>Memimpin tim dalam merancang dan mengembangkan sistem, termasuk perencanaan, pembagian tugas, dan validasi kebutuhan pengguna.</li>
-          <li>Menggunakan framework <span class="font-medium text-purple-600">Laravel</span> untuk membangun backend yang efisien, aman, dan scalable.</li>
-          <li>Mengimplementasikan mekanisme <span class="font-medium">Authentication</span> dan <span class="font-medium">Authorization</span>, termasuk manajemen sesi, proteksi endpoint, dan kontrol akses berbasis peran (<span class="font-medium">RBAC</span>).</li>
-          <li>Merancang dan mengimplementasikan fitur chat untuk memfasilitasi komunikasi antara pengguna dan admin terkait laporan.</li>
-          <li>Menjamin keamanan data dan privasi percakapan melalui validasi serta autentikasi pengguna.</li>
-          <li>Mempersiapkan dokumentasi proyek dan presentasi untuk kebutuhan demo.</li>
-        </ul>
+      <!-- Pengalaman 1: Asisten Dosen -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Teks -->
+        <div>
+          <h4 class="text-xl font-semibold text-purple-600 mb-4">Asisten Dosen - Universitas Methodist Indonesia</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>
+              Bertanggung jawab dalam pengajaran mata kuliah praktikum yang mencakup 
+              <span class="font-medium text-purple-600">Algoritma dan Pemrograman, Struktur Data, Sistem Basis Data, Desain Web,</span> 
+              serta <span class="font-medium text-purple-600">Pemrograman Web</span>.
+            </li>
+            <li>
+                Menerapkan metode pengajaran berbasis praktik langsung (hands-on) untuk meningkatkan pemahaman mahasiswa. 
+            </li>
+            <li>
+              Membimbing mahasiswa dalam praktikum, membantu memahami konsep dasar serta implementasi 
+              <span class="font-medium text-purple-600">HTML, CSS, dan PHP</span>.
+            </li>
+            <li>
+              Mengajar Framework <span class="font-medium text-purple-600">Laravel</span> kepada mahasiswa.
+            </li>
+            <li>
+              Memberikan bantuan dalam penggunaan alat Web Development seperti 
+              <span class="font-medium">Kode Editor</span> dan versi kontrol (<span class="font-medium">Git</span>), 
+              serta membantu mahasiswa menyelesaikan masalah teknis.
+            </li>
+          </ul>
+        </div>
+        <!-- Sertifikat (klik untuk buka PDF modal) -->
+        <div class="flex justify-center">
+          <!-- gunakan data-pdf untuk menyimpan path pdf -->
+          <button class="w-64 group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition"
+                  data-pdf="sk_asdoss.pdf" aria-label="Buka sertifikat Asisten Dosen">
+            <img src="sk_asdos.jpg" alt="Sertifikat Asisten Dosen" class="w-full object-cover">
+            <div class="p-3 bg-white">
+              <div class="text-center font-medium text-gray-700">Lihat Sertifikat</div>
+            </div>
+          </button>
+        </div>
       </div>
-      <!-- Sertifikat -->
-      <div class="flex justify-center">
-        <img src="serti_magang.jpg" alt="Sertifikat Backend Developer & Project Leader" 
-             class="w-64 rounded-xl border-4 border-purple-300 shadow-lg hover:scale-105 transition duration-300">
+
+      <!-- Pengalaman 2: Backend Developer & Project Leader -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Teks -->
+        <div>
+          <h4 class="text-xl font-semibold text-purple-600 mb-4">Backend Developer & Project Leader - Pengadilan Negeri Medan</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>Membuat aplikasi berbasis website berjudul <span class="font-medium text-purple-600">"Sistem Tiketing Laporan IT"</span>.</li>
+            <li>Memimpin tim dalam merancang dan mengembangkan sistem, termasuk perencanaan, pembagian tugas, dan validasi kebutuhan pengguna.</li>
+            <li>Menggunakan framework <span class="font-medium text-purple-600">Laravel</span> untuk membangun backend yang efisien, aman, dan scalable.</li>
+            <li>Mengimplementasikan mekanisme <span class="font-medium">Authentication</span> dan <span class="font-medium">Authorization</span>, termasuk manajemen sesi, proteksi endpoint, dan kontrol akses berbasis peran (<span class="font-medium">RBAC</span>).</li>
+            <li>Merancang dan mengimplementasikan fitur chat untuk memfasilitasi komunikasi antara pengguna dan admin terkait laporan.</li>
+            <li>Menjamin keamanan data dan privasi percakapan melalui validasi serta autentikasi pengguna.</li>
+            <li>Mempersiapkan dokumentasi proyek dan presentasi untuk kebutuhan demo.</li>
+          </ul>
+        </div>
+        <!-- Sertifikat -->
+        <div class="flex justify-center">
+          <button class="w-64 group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition"
+                  data-pdf="serti_magang.pdf" aria-label="Buka sertifikat Magang">
+            <img src="serti_magang.jpg" alt="Sertifikat Backend Developer" class="w-full object-cover">
+            <div class="p-3 bg-white">
+              <div class="text-center font-medium text-gray-700">Lihat Sertifikat</div>
+            </div>
+          </button>
+        </div>
       </div>
-    </div>
-
-
-      
 
     </div>
   </section>
-
-
 
   <!-- Kontak -->
   <section id="contact" class="max-w-4xl mx-auto mt-20 mb-16 p-6 bg-white shadow-lg rounded-2xl">
     <h3 class="text-2xl font-bold text-gray-800 mb-4">Kontak</h3>
-      <p class="text-gray-600 mb-6">
-    Tertarik untuk bekerja sama atau sekadar berdiskusi tentang teknologi?  
-    Silakan hubungi saya melalui klik tombol di bawah ini:
-  </p>
+    <p class="text-gray-600 mb-6">
+      Tertarik untuk bekerja sama atau sekadar berdiskusi tentang teknologi?  
+      Silakan hubungi saya melalui klik tombol di bawah ini:
+    </p>
 
-  <!-- Ikon Sosial -->
-  <div class="flex justify-center space-x-6 mb-6">
+    <!-- Ikon Sosial -->
+    <div class="flex justify-center space-x-6 mb-6">
       <!-- WhatsApp -->
-      <a href="https://wa.me/6282254711413?text=Halo%20saya%20tertarik%20dengan%20jasa%20website%20anda%2C%20bisa%20bicara%20lebih%20lanjut%3F
-" target="_blank" 
+      <a href="https://wa.me/6282254711413?text=Halo%20saya%20tertarik%20dengan%20jasa%20website%20anda%2C%20bisa%20bicara%20lebih%20lanjut%3F"
+         target="_blank"
          class="flex items-center bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition">
         <i class="fa-brands fa-whatsapp text-xl mr-2"></i> WhatsApp
       </a>
       <!-- Email -->
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dolyboantua@gmail.com" target="_blank" 
-   class="flex items-center bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">
-  <i class="fa-solid fa-envelope text-xl mr-2"></i> Email
-</a>
-
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dolyboantua@gmail.com" target="_blank"
+         class="flex items-center bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">
+        <i class="fa-solid fa-envelope text-xl mr-2"></i> Email
+      </a>
     </div>
   </section>
+
+  <!-- Modal untuk menampilkan PDF -->
+  <div id="pdfModal" class="fixed inset-0 hidden items-center justify-center z-60">
+    <!-- backdrop -->
+    <div id="modalBackdrop" class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-70 max-w-5xl w-full mx-4">
+      <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+        <!-- header -->
+        <div class="flex items-center justify-between p-3 border-b">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-file-pdf text-red-600"></i>
+            <div id="pdfTitle" class="font-semibold text-gray-800">Sertifikat</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a id="downloadPdf" href="#" target="_blank" class="text-sm px-3 py-1 rounded bg-gray-100 hover:bg-gray-200">Download</a>
+            <button id="closeModal" class="text-gray-600 hover:text-gray-900">
+              <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- content: PDF viewer -->
+        <div class="p-3">
+          <!-- Gunakan iframe untuk menampilkan PDF. Pastikan file PDF berada di path yang benar -->
+          <iframe id="pdfViewer" src="" class="w-full h-[70vh] rounded" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- script hamburger navbar -->
+    <script>
+  // toggle menu mobile
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    btn.innerHTML = menuOpen 
+      ? '<i class="fa-solid fa-bars"></i>' 
+      : '<i class="fa-solid fa-xmark"></i>';
+    menuOpen = !menuOpen;
+  });
+</script>
+  <!-- Script modal -->
+  <script>
+    // Ambil semua tombol sertifikat (button dengan data-pdf)
+    const certButtons = document.querySelectorAll('button[data-pdf]');
+    const modal = document.getElementById('pdfModal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const pdfTitle = document.getElementById('pdfTitle');
+    const downloadPdf = document.getElementById('downloadPdf');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    certButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pdfPath = btn.getAttribute('data-pdf'); // ex: "sk_asdos.pdf"
+        const alt = btn.querySelector('img')?.alt || 'Sertifikat';
+        // set src iframe (gunakan path relatif atau absolute)
+        pdfViewer.src = pdfPath;
+        pdfTitle.textContent = alt;
+        downloadPdf.href = pdfPath;
+        // tampilkan modal
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        // disable scroll belakang
+        document.documentElement.style.overflow = 'hidden';
+      });
+    });
+
+    // fungsi tutup modal
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      pdfViewer.src = ''; // hentikan pemuatan PDF
+      document.documentElement.style.overflow = ''; // restore scroll
+    }
+
+    // klik backdrop / close button
+    backdrop.addEventListener('click', closeModal);
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // tombol ESC untuk menutup modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
